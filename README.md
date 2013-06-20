@@ -8,7 +8,7 @@ These enhancements help to demonstrate highly available and scalable deployments
 The original SpringSource version can be found here:
 https://github.com/Logic2020Inc/spring-petclinic-mod/
 
-What does it look like?
+##What does it look like?
 
 This modified version of spring-petclinic has been deployed to Windows Azure here: http://petclinic.cloudapp.net/
 
