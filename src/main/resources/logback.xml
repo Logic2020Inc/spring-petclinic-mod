@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Logback configuration file
+	Modified by Michael Ashby -Added FileAppender and DBAppender configured for Windows Azure SQL Database. 
+-->
+<configuration scan="false" scanPeriod="30 seconds" >
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+    <!-- To enable JMX Management -->
+    <jmxConfigurator/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-5level %logger{0} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>C:/temp/testFile.log</file>
+    <append>true</append>
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  
+  <appender name="DB" class="ch.qos.logback.classic.db.DBAppender">
+    <connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
+      <driverClass>com.microsoft.sqlserver.jdbc.SQLServerDriver</driverClass>
+      <url>jdbc:sqlserver://server_name_here.database.windows.net:1433;databaseName=petclinic</url>
+      <user>User_Name_here@Server_Name_here</user>
+      <password>password_goes_here</password>
+    </connectionSource>
+  </appender>
+  
+  
+	 <logger name="org.hibernate" level="warn"> 
+	 	<appender-ref ref="console" />
+	 </logger>
+     <logger name="org.springframework.samples.petclinic" level="warn"> 
+	 	<appender-ref ref="DB" />
+	 </logger>
+         
+   <root level="warn">
+    <appender-ref ref="STDOUT" />
+  </root>
+   
+</configuration>

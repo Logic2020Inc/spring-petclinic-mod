@@ -1,0 +1,25 @@
+================================================================================
+===     Spring PetClinic sample application -   SQL Server Configuration     ===
+================================================================================
+
+@author Michael Ashby
+Note: Can either be deployed to SQL Server or Windows Azure SQL Database
+--------------------------------------------------------------------------------
+
+1) Create account on Windows Azure. Once you an account you can create a SQL Server server
+instance, then a database. 
+   Azure can be found here: http://www.windowsazure.com/
+
+2) Download Windows Azure Toolkit for Java, the MSSQL JDBC driver, which
+   can be found in Eclipse by downloading the Microsoft OpenTech extensions
+   under Help->Check for Updates:
+   Windows Azure - http://dl.msopentech.com/eclipse
+
+3) You can manually deploy the database objects by executing the "db/mssql/initDB.sql"
+   script. Or comment out the jdbc:initialize-database section in 
+   	src\main\resources\spring\datasource-config.xml
+
+4) Open "src\main\resources\spring\data-access.properties"; comment out all properties in the
+   "HSQL Settings" section; add new section for all properties for "MSSQL Settings"
+   section.
+   
