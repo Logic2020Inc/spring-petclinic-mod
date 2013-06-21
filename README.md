@@ -6,7 +6,7 @@ The main differences are that here we are implementing Simple-Spring-Memcached, 
 These enhancements help to demonstrate highly available and scalable deployments of Spring applications in the Windows Azure environment. 
 
 The original SpringSource version can be found here:
-https://github.com/Logic2020Inc/spring-petclinic-mod/
+https://github.com/springsource/spring-petclinic/
 
 ##What does it look like?
 
