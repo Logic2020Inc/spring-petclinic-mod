@@ -1,9 +1,9 @@
 # Spring PetClinic Sample Application
 
-## Why a modified version of PetClinic?
-The main differences are that here we are implementing Simple-Spring-Memcached, adding scripts for deployment to Microsoft SQL Azure Database, and adding a transient fault exception handler. 
+## Step by Step Tutorial for the Migrating the Java PetClinic to Windows Azure
 
-These enhancements help to demonstrate highly available and scalable deployments of Spring applications in the Windows Azure environment. 
+This is a live Java Spring Framework  application running on Windows Azure Cloud Services with Azure SQL Database as the backend relational store. Please explore the application, and refer to the following resources to learn how to migrate a Spring Framework application to Windows Azure. While the tutorial below focuses on a popular Spring Framework sample application, the Java PetClinic, the tutorial will introduce you to the Windows Azure Java SDK, Windows Azure Caching using memcached, Windows Azure Cloud Services, Windows Azure SQL Database, and a variety of other technologies that will be used in many other types of Java applications deployed on Windows Azure.
+http://aka.ms/JavaAzureTutorial
 
 The original SpringSource version can be found here:
 https://github.com/springsource/spring-petclinic/
@@ -14,36 +14,7 @@ This modified version of spring-petclinic has been deployed to Windows Azure her
 
 
 ## Running petclinic locally
-```
-	git clone https://github.com/Logic2020Inc/spring-petclinic-mod.git
-	mvn tomcat7:run
-```
-
-You can then access petclinic here: http://localhost:8080/spring-petclinic/
-
-## Working with Petclinic in Eclipse/STS
-
-### prerequisites
-The following items should be installed in your system:
-* Maven 3 (http://www.sonatype.com/books/mvnref-book/reference/installation.html)
-* git command line tool (https://help.github.com/articles/set-up-git)
-* Eclipse with the m2e plugin (m2e is installed by default when using the STS (http://www.springsource.org/sts) distribution of Eclipse) 
-
-Note: when m2e is available, there is an m2 icon in Help -> About dialog.
-If m2e is not there, just follow the install process here: http://eclipse.org/m2e/download/
-
-
-### Steps:
-
-1) In the command line
-```
-git clone https://github.com/Logic2020Inc/spring-petclinic-mod.git
-```
-2) Inside Eclipse
-```
-File -> Import -> Maven -> Existing Maven project
-```
-
+Please review the tutorial at: http://aka.ms/JavaAzureTutorial
 
 
 
