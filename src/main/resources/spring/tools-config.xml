@@ -60,7 +60,7 @@
           </property>
           <property name="addressProvider">
                 <bean class="com.google.code.ssm.config.DefaultAddressProvider">
-                     <property name="address" value="localhost_WorkerRole1:11211" />
+                     <property name="address" value="localhost:11211" />
                 </bean>
           </property>
           <property name="configuration">
