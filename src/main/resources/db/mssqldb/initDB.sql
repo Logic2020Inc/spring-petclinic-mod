@@ -10,12 +10,12 @@ begin
 exec (@sql)
  PRINT @sql
 end
-while(exists(select 1 from INFORMATION_SCHEMA.TABLES))
+while(exists(select 1 from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'dbo'))
 begin
  
  SELECT TOP 1 @sql=('DROP TABLE ' + TABLE_SCHEMA + '.[' + TABLE_NAME
  + ']')
- FROM INFORMATION_SCHEMA.TABLES
+ FROM INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'dbo'
 exec (@sql)
 PRINT @sql
 end
@@ -78,4 +78,3 @@ end
 	);
 	alter table visits add constraint fk_visits_pets foreign key (pet_id) references pets(id);
 	CREATE INDEX visits_pet_id ON visits(pet_id);
- 
